@@ -1,80 +1,45 @@
 # Author: Woosung Lim wml5207@psu.print
-def getGradePoint(grade1, grade2, grade3):
+def getGradePoint(grade):
 
-  if grade1 == "A":
+  if grade == "A":
     return 4.0
-  elif grade1 == "A-":
+  elif grade == "A-":
     return 3.67
-  elif grade1 == "B+":
+  elif grade == "B+":
     return 3.33
-  elif grade1 == "B":
+  elif grade == "B":
     return 3.0 
-  elif grade1 == "B-":
+  elif grade == "B-":
     return 2.67
-  elif grade1 == "C+":
+  elif grade == "C+":
     return 2.33
-  elif grade1 == "C":
+  elif grade == "C":
     return 2.0
-  elif grade1 == "D":
+  elif grade == "D":
     return 1.0
   else:
     return 0.0
 
-  if grade2 == "A":
-    return 4.0
-  elif grade2 == "A-":
-    return 3.67
-  elif grade2 == "B+":
-    return 3.33
-  elif grade2 == "B":
-    return 3.0 
-  elif grade2 == "B-":
-    return 2.67
-  elif grade2 == "C+":
-    return 2.33
-  elif grade2 == "C":
-    return 2.0
-  elif grade2 == "D":
-    return 1.0
-  else:
-    return 0.0
-
-  if grade3 == "A":
-    return 4.0
-  elif grade3 == "A-":
-    return 3.67
-  elif grade3 == "B+":
-    return 3.33
-  elif grade3 == "B":
-    return 3.0 
-  elif grade3 == "B-":
-    return 2.67
-  elif grade3 == "C+":
-    return 2.33
-  elif grade3 == "C":
-    return 2.0
-  elif grade3 == "D":
-    return 1.0
-  else:
-    return 0.0
- 
 def run():
-  grade1 = input("Enter your course1 letter grade: ")
+  grade = input("Enter your course1 letter grade: ")
+  grade1 = getGradePoint(grade)
   credit1 = input("Enter your course 1 credit: ")
-  print(f"Grade point for course 1 is: {getGradePoint(grade1)}")
+  print(f"Grade point for course 1 is: {getGradePoint(grade)}")
 
-  grade2 = input("Enter your course2 letter grade: ")
+  grade = input("Enter your course2 letter grade: ")
+  grade2 = getGradePoint(grade)
   credit2 = input("Enter your course 2 credit: ")
-  print(f"Grade point for course 2 is: {getGradePoint(grade2)}")
+  print(f"Grade point for course 2 is: {getGradePoint(grade)}")
 
-  grade3 = input("Enter your course3 letter grade: ")
+  grade = input("Enter your course3 letter grade: ")
+  grade3 = getGradePoint(grade)
   credit3 = input("Enter your course 3 credit: ")
-  print(f"Grade point for course 3 is: {getGradePoint(grade3)}")
+  print(f"Grade point for course 3 is: {getGradePoint(grade)}")
 
   credit1 = float(credit1)
   credit2 = float(credit2)
   credit3 = float(credit3)
-  GPA = (({grade1} * credit1) + (grade2 * credit2) + (grade3 * credit3))/(credit1 + credit2 + credit3)
+  GPA = ((grade1 * credit1) + (grade2 * credit2) + (grade3 * credit3))/(credit1 + credit2 + credit3)
 
   print("Your GPA is: " + str(GPA))
 
